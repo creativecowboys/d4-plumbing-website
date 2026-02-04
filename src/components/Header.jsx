@@ -1,0 +1,109 @@
+import React, { useState, useEffect } from 'react';
+import { Phone, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+
+const navItems = [
+  { name: 'Home', page: 'Home' },
+  { name: 'Services', page: 'Services' },
+  { name: 'Products', page: 'Products' },
+  { name: 'About Us', page: 'About' },
+  { name: 'Locations', page: 'Locations' },
+  { name: 'Contact', page: 'Contact' },
+];
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-[#252525]/95 backdrop-blur-md shadow-2xl py-3'
+          : 'bg-transparent py-5'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
+        <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
+          <div className="w-12 h-12 bg-[#B08C47] rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <span className="text-white font-bold text-xl">D4</span>
+          </div>
+          <div className="hidden sm:block">
+            <h1 className="text-white font-bold text-lg tracking-tight">D4 Plumbing</h1>
+            <p className="text-[#B08C47] text-xs font-medium tracking-widest uppercase">DeFoor Plumbing</p>
+          </div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={createPageUrl(item.page)}
+              className="text-white/80 hover:text-[#B08C47] text-sm font-medium tracking-wide transition-colors relative group"
+            >
+              {item.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B08C47] group-hover:w-full transition-all duration-300" />
+            </Link>
+          ))}
+        </nav>
+
+        {/* CTA Button */}
+        <div className="flex items-center gap-4">
+          <a
+            href="tel:770-562-0406"
+            className="hidden md:flex items-center gap-2 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          >
+            <Phone className="w-4 h-4" />
+            <span>770-562-0406</span>
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden text-white p-2"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`lg:hidden absolute top-full left-0 right-0 bg-[#252525]/98 backdrop-blur-lg transition-all duration-500 overflow-hidden ${
+          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <nav className="flex flex-col p-6 gap-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={createPageUrl(item.page)}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-white/90 hover:text-[#B08C47] text-lg font-medium py-2 border-b border-white/10 transition-colors"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <a
+            href="tel:770-562-0406"
+            className="flex items-center justify-center gap-2 bg-[#B08C47] text-white px-6 py-3 rounded-full font-semibold mt-4"
+          >
+            <Phone className="w-5 h-5" />
+            Call Now: 770-562-0406
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
+}
