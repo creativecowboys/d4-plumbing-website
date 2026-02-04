@@ -69,13 +69,12 @@ export default function Header() {
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
-          <a
-            href="tel:770-562-0406"
+          <Link
+            to={createPageUrl('Contact')}
             className="hidden md:flex items-center gap-2 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
-            <Phone className="w-4 h-4" />
-            <span>770-562-0406</span>
-          </a>
+            <span>Get a Free Estimate</span>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
