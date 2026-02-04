@@ -59,7 +59,7 @@ export default function Header() {
             <Link
               key={item.name}
               to={createPageUrl(item.page)}
-              className="text-white/80 hover:text-[#B08C47] text-sm font-medium tracking-wide transition-colors relative group"
+              className="text-white/80 hover:text-[#B08C47] text-sm font-bold tracking-wide transition-colors relative group"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B08C47] group-hover:w-full transition-all duration-300" />
