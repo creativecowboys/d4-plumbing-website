@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const partners = [
-  { name: 'Rheem', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Rheem_logo.svg/200px-Rheem_logo.svg.png' },
-  { name: 'Moen', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Moen_logo.svg/200px-Moen_logo.svg.png' },
-  { name: 'Delta', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Delta_Faucet_Company_logo.svg/200px-Delta_Faucet_Company_logo.svg.png' },
-  { name: 'Kohler', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Kohler_Logo.svg/200px-Kohler_Logo.svg.png' },
+  { name: 'Rheem', logo: 'https://www.rheem.com/rheem-logo.svg' },
+  { name: 'Moen', logo: 'https://www.moen.com/sites/all/themes/moen/logo.svg' },
+  { name: 'Delta', logo: 'https://www.deltafaucet.com/etc.clientlibs/delta-faucet/clientlibs/clientlib-site/resources/images/delta-logo.svg' },
+  { name: 'Kohler', logo: 'https://www.us.kohler.com/on/demandware.static/-/Library-Sites-KohlerSharedLibrary/default/dw7d9f0f0e/images/kohler-logo.svg' },
 ];
 
 export default function TrustBar() {
