@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-[#F7F7F7]">
+    <div className="min-h-screen bg-[#F7F7F7] pt-9">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
         

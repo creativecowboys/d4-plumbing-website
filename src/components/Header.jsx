@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
@@ -25,7 +25,24 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#252525]/95 backdrop-blur-md shadow-2xl py-3 transition-all duration-500">
+    <>
+      {/* Top Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-[#B08C47] py-2">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-white text-sm">
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4" />
+            <span className="hidden sm:inline">902 McBrayer Rd, Temple, GA 30179</span>
+            <span className="sm:hidden">Temple, GA</span>
+          </div>
+          <a href="tel:770-562-0406" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <Phone className="w-4 h-4" />
+            <span>770-562-0406</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <header className="fixed top-9 left-0 right-0 z-50 bg-[#252525]/95 backdrop-blur-md shadow-2xl py-3 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to={createPageUrl('Home')} className="flex items-center group">
@@ -97,5 +114,6 @@ export default function Header() {
         </nav>
       </div>
     </header>
+    </>
   );
 }
