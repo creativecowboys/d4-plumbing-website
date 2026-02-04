@@ -34,7 +34,7 @@ export default function Footer() {
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/00d571434_D4Logo.png"
                   alt="D4 Plumbing - DeFoor Plumbing"
-                  className="h-24 w-auto"
+                  className="h-26 w-auto"
                 />
               </div>
               <p className="text-white/60 mb-6 leading-relaxed">
