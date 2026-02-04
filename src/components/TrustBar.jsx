@@ -39,7 +39,7 @@ export default function TrustBar() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-full object-contain filter brightness-0 opacity-60 hover:filter-none hover:opacity-100 transition-all duration-500"
+                  className="max-h-full max-w-full object-contain"
                   onError={(e) => {
                     console.error(`Failed to load logo: ${partner.name}`, e);
                     e.target.parentElement.innerHTML = `<span class="text-[#252525]/60 font-bold text-lg">${partner.name}</span>`;
