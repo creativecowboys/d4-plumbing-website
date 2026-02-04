@@ -37,7 +37,7 @@ export default function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1581092921461-eab10380c9a5?w=800&q=80"
+                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&q=80"
                 alt="Professional plumber at work"
                 className="w-full h-full object-cover"
               />
