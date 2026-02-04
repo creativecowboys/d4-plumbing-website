@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Building2, Wrench, Droplets, Flame, ShowerHead, Waves, ThermometerSun, ArrowRight, Phone, CheckCircle2 } from 'lucide-react';
+import { Home, Building2, Wrench, ShowerHead, Waves, ThermometerSun, ArrowRight, Phone, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
