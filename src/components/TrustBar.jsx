@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const partners = [
-  { name: 'Rheem', logo: 'https://www.rheem.com/rheem-logo.svg' },
-  { name: 'Moen', logo: 'https://www.moen.com/sites/all/themes/moen/logo.svg' },
-  { name: 'Delta', logo: 'https://www.deltafaucet.com/etc.clientlibs/delta-faucet/clientlibs/clientlib-site/resources/images/delta-logo.svg' },
-  { name: 'Kohler', logo: 'https://www.us.kohler.com/on/demandware.static/-/Library-Sites-KohlerSharedLibrary/default/dw7d9f0f0e/images/kohler-logo.svg' },
+  { name: 'Rheem', logo: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/a59b07dcc_rheem.png' },
+  { name: 'Moen', logo: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/0daf44aa9_Moen_logosvg.png' },
+  { name: 'Delta', logo: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/d431dc72f_deltalogonew.png' },
+  { name: 'Kohler', logo: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/16b12f5df_kohler-1-logo-png-transparent.png' },
 ];
 
 export default function TrustBar() {
