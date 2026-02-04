@@ -30,14 +30,12 @@ export default function Footer() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand Column */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#B08C47] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">D4</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">D4 Plumbing</h3>
-                  <p className="text-[#B08C47] text-xs tracking-widest uppercase">DeFoor Plumbing</p>
-                </div>
+              <div className="mb-6">
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/00d571434_D4Logo.png"
+                  alt="D4 Plumbing - DeFoor Plumbing"
+                  className="h-20 w-auto"
+                />
               </div>
               <p className="text-white/60 mb-6 leading-relaxed">
                 Family-owned plumbing experts serving West Metro Atlanta with over 35 years of trusted experience.

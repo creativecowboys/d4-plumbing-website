@@ -34,14 +34,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
-          <div className="w-12 h-12 bg-[#B08C47] rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-            <span className="text-white font-bold text-xl">D4</span>
-          </div>
-          <div className="hidden sm:block">
-            <h1 className="text-white font-bold text-lg tracking-tight">D4 Plumbing</h1>
-            <p className="text-[#B08C47] text-xs font-medium tracking-widest uppercase">DeFoor Plumbing</p>
-          </div>
+        <Link to={createPageUrl('Home')} className="flex items-center group">
+          <img
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/00d571434_D4Logo.png"
+            alt="D4 Plumbing - DeFoor Plumbing"
+            className="h-16 w-auto group-hover:scale-105 transition-transform"
+          />
         </Link>
 
         {/* Desktop Navigation */}
