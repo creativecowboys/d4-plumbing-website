@@ -8,10 +8,10 @@ const locations = [
   { name: 'Temple', featured: true },
   { name: 'Villa Rica', featured: true },
   { name: 'Carrollton', featured: true },
-  { name: 'Bremen', featured: false },
-  { name: 'Dallas', featured: false },
+  { name: 'Bremen', featured: true },
+  { name: 'Dallas', featured: true },
   { name: 'Douglasville', featured: true },
-  { name: 'Hiram', featured: false },
+  { name: 'Hiram', featured: true },
   { name: 'Atlanta', featured: true },
 ];
 
