@@ -25,13 +25,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-[#252525]/95 backdrop-blur-md shadow-2xl py-3'
-          : 'bg-transparent py-5'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#252525]/95 backdrop-blur-md shadow-2xl py-3 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to={createPageUrl('Home')} className="flex items-center group">
