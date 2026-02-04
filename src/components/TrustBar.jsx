@@ -35,15 +35,11 @@ export default function TrustBar() {
               transition={{ delay: idx * 0.1 }}
               className="group"
             >
-              <div className="h-12 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+              <div className="h-16 w-40 flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-500">
                 <img
                   src={partner.logo}
                   alt={partner.name}
                   className="max-h-full max-w-full object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<span class="text-[#252525]/60 font-bold text-xl">${partner.name}</span>`;
-                  }}
                 />
               </div>
             </motion.div>
