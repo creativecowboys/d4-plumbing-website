@@ -88,7 +88,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-[#252525]/98 backdrop-blur-lg transition-all duration-500 overflow-hidden ${
+        className={`lg:hidden absolute top-full left-0 right-0 bg-[#252525] backdrop-blur-lg transition-all duration-500 overflow-hidden ${
           mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
