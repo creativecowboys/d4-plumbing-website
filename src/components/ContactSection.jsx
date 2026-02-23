@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '770-562-0406', href: 'tel:770-562-0406' },
+  { icon: Phone, label: 'Phone', value: '470-613-2447', href: 'tel:470-613-2447' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM' },
@@ -92,7 +92,7 @@ export default function ContactSection() {
             <div className="bg-[#252525] rounded-2xl p-6 text-center">
               <p className="text-white/70 mb-3">Need immediate assistance?</p>
               <a
-                href="tel:770-562-0406"
+                href="tel:470-613-2447"
                 className="inline-flex items-center gap-2 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
               >
                 <Phone className="w-5 h-5" />

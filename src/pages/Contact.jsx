@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { motion } from 'framer-motion';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '770-562-0406', href: 'tel:770-562-0406', action: 'Call now' },
+  { icon: Phone, label: 'Phone', value: '470-613-2447', href: 'tel:470-613-2447', action: 'Call now' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com', action: 'Send email' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179', action: 'Get directions', href: 'https://maps.google.com/?q=902+McBrayer+Rd,+Temple,+GA+30179' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM', action: 'Emergency 24/7' },
@@ -138,11 +138,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Need immediate help?</p>
-                    <p className="text-white font-bold text-lg">Call 770-562-0406</p>
+                    <p className="text-white font-bold text-lg">Call 470-613-2447</p>
                   </div>
                 </div>
                 <a
-                  href="tel:770-562-0406"
+                  href="tel:470-613-2447"
                   className="block w-full text-center bg-[#B08C47] hover:bg-[#9a7a3d] text-white py-3 rounded-full font-semibold transition-colors"
                 >
                   Call Now

@@ -34,9 +34,9 @@ export default function Header() {
             <span className="hidden sm:inline">902 McBrayer Rd, Temple, GA 30179</span>
             <span className="sm:hidden">Temple, GA</span>
           </div>
-          <a href="tel:770-562-0406" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <a href="tel:470-613-2447" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <Phone className="w-4 h-4" />
-            <span>770-562-0406</span>
+            <span>470-613-2447</span>
           </a>
         </div>
       </div>
@@ -104,11 +104,11 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="tel:770-562-0406"
+            href="tel:470-613-2447"
             className="flex items-center justify-center gap-2 bg-[#B08C47] text-white px-6 py-3 rounded-full font-semibold mt-4"
           >
             <Phone className="w-5 h-5" />
-            Call Now: 770-562-0406
+            Call Now: 470-613-2447
           </a>
         </nav>
       </div>
