@@ -6,14 +6,17 @@ import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '470-613-2447', href: 'tel:470-613-2447' },
+  { icon: Phone, label: 'Phone', value: '(770) 562-0406', href: 'tel:7705620406' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM' },
 ];
 
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
+
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,11 +25,33 @@ export default function ContactSection() {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: 'New Quote Request — D4 Plumbing',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please call us directly at (770) 562-0406.');
+      }
+    } catch {
+      alert('Something went wrong. Please call us directly at (770) 562-0406.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -92,7 +117,7 @@ export default function ContactSection() {
             <div className="bg-[#252525] rounded-2xl p-6 text-center">
               <p className="text-white/70 mb-3">Need immediate assistance?</p>
               <a
-                href="tel:470-613-2447"
+                href="tel:7705620406"
                 className="inline-flex items-center gap-2 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
               >
                 <Phone className="w-5 h-5" />
@@ -189,13 +214,14 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <Button
+                  <button
                     type="submit"
-                    className="w-full h-14 bg-[#B08C47] hover:bg-[#9a7a3d] text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                    disabled={submitting}
+                    className="w-full h-14 bg-[#B08C47] hover:bg-[#9a7a3d] disabled:opacity-60 text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Request
-                  </Button>
+                    <Send className="w-5 h-5" />
+                    {submitting ? 'Sending…' : 'Send Request'}
+                  </button>
 
                   <p className="text-center text-[#252525]/50 text-sm">
                     We'll respond within 24 hours. Your information is secure.

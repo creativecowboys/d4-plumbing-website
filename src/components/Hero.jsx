@@ -55,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-white/70 mb-10 max-w-xl leading-relaxed"
           >
-            Family-owned and operated with over 35 years of trusted experience. 
+            Family-owned and operated with over 35 years of trusted experience.
             Quality craftsmanship you can rely on.
           </motion.p>
 
@@ -73,11 +73,11 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="tel:470-613-2447"
+              href="tel:7705620406"
               className="group inline-flex items-center justify-center gap-3 border-2 border-white/30 hover:border-[#B08C47] text-white hover:text-[#B08C47] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
             >
               <Phone className="w-5 h-5" />
-              Call 470-613-2447
+              Call (770) 562-0406
             </a>
           </motion.div>
 

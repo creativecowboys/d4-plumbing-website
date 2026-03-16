@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '470-613-2447', href: 'tel:470-613-2447', action: 'Call now' },
+  { icon: Phone, label: 'Phone', value: '(770) 562-0406', href: 'tel:7705620406', action: 'Call now' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com', action: 'Send email' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179', action: 'Get directions', href: 'https://maps.google.com/?q=902+McBrayer+Rd,+Temple,+GA+30179' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM', action: 'Emergency 24/7' },
@@ -25,8 +25,11 @@ const services = [
   'Other',
 ];
 
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,16 +39,41 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: 'New Quote Request — D4 Plumbing',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          location: formData.location,
+          message: formData.message,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please call us directly at (770) 562-0406.');
+      }
+    } catch {
+      alert('Something went wrong. Please call us directly at (770) 562-0406.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <div className="pt-24">
       <SEOHead
         title="Contact D4 Plumbing | Free Estimate — West Metro Atlanta"
-        description="Get a free, no-obligation plumbing estimate from D4 Plumbing. Call 470-613-2447 or fill out our online form. We serve all of West Metro Atlanta."
+        description="Get a free, no-obligation plumbing estimate from D4 Plumbing. Call (770) 562-0406 or fill out our online form. We serve all of West Metro Atlanta."
       />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
@@ -143,11 +171,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Need immediate help?</p>
-                    <p className="text-white font-bold text-lg">Call 470-613-2447</p>
+                    <p className="text-white font-bold text-lg">Call (770) 562-0406</p>
                   </div>
                 </div>
                 <a
-                  href="tel:470-613-2447"
+                  href="tel:7705620406"
                   className="block w-full text-center bg-[#B08C47] hover:bg-[#9a7a3d] text-white py-3 rounded-full font-semibold transition-colors"
                 >
                   Call Now
@@ -286,13 +314,14 @@ export default function Contact() {
                       />
                     </div>
 
-                    <Button
+                    <button
                       type="submit"
-                      className="w-full h-14 bg-[#B08C47] hover:bg-[#9a7a3d] text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                      disabled={submitting}
+                      className="w-full h-14 bg-[#B08C47] hover:bg-[#9a7a3d] disabled:opacity-60 text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                     >
-                      <Send className="w-5 h-5 mr-2" />
-                      Request Free Estimate
-                    </Button>
+                      <Send className="w-5 h-5" />
+                      {submitting ? 'Sending…' : 'Request Free Estimate'}
+                    </button>
 
                     <p className="text-center text-[#252525]/50 text-sm">
                       We'll respond within 24 hours. Your information is secure and will never be shared.

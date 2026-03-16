@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <SEOHead
         title="D4 Plumbing | Expert Plumbing Services in West Metro Atlanta"
-        description="Family-owned plumbing company with 35+ years of experience serving Temple, Villa Rica, Carrollton, Douglasville & West Metro Atlanta. Free estimates. Call 470-613-2447."
+        description="Family-owned plumbing company with 35+ years of experience serving Temple, Villa Rica, Carrollton, Douglasville & West Metro Atlanta. Free estimates. Call (770) 562-0406."
       />
       <Hero />
       <TrustBar />
