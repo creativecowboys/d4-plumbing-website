@@ -3,33 +3,34 @@ import { CheckCircle2, ArrowRight, Award, Shield, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
+import SEOHead from '@/components/SEOHead';
 
 const products = [
   {
     category: 'Water Heaters',
     brand: 'Rheem',
-    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
+    image: '/rheem_water_heater.png',
     description: 'Industry-leading water heaters with superior efficiency and reliability.',
     features: ['Energy Star certified', 'Tank & tankless options', 'Extended warranties', 'Professional installation'],
   },
   {
     category: 'Faucets & Fixtures',
     brand: 'Moen',
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
+    image: '/moen_faucet.png',
     description: 'Premium faucets combining style with lasting durability.',
     features: ['Lifetime warranty', 'WaterSense certified', 'Modern designs', 'Easy installation'],
   },
   {
     category: 'Kitchen & Bath',
     brand: 'Delta',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80',
+    image: '/delta_fixture.png',
     description: 'Innovative fixtures with Touch2O® and ShieldSpray® technology.',
     features: ['Touch technology', 'Diamond Seal valve', 'MagnaTite docking', 'Limited lifetime warranty'],
   },
   {
     category: 'Toilets & Sinks',
     brand: 'Kohler',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+    image: '/kohler_toilet.png',
     description: 'Bold design meets precision engineering for superior performance.',
     features: ['AquaPiston technology', 'Water-saving designs', 'Premium finishes', 'Complete collections'],
   },
@@ -51,6 +52,10 @@ const materials = [
 export default function Products() {
   return (
     <div className="pt-24">
+      <SEOHead
+        title="Quality Plumbing Products | D4 Plumbing"
+        description="We install premium brands — Rheem, Moen, Delta & Kohler — backed by manufacturer warranties and expert installation in West Metro Atlanta."
+      />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -72,7 +77,7 @@ export default function Products() {
               <span className="text-[#B08C47]">We Trust</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              We only install products from manufacturers we trust. Quality materials 
+              We only install products from manufacturers we trust. Quality materials
               mean lasting results and peace of mind for you.
             </p>
           </motion.div>

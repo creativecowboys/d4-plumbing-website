@@ -3,6 +3,7 @@ import { MapPin, Phone, ArrowRight, CheckCircle2, Clock, Truck } from 'lucide-re
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
+import SEOHead from '@/components/SEOHead';
 
 const primaryLocations = [
   { name: 'Temple', description: 'Our headquarters and primary service area' },
@@ -20,6 +21,10 @@ const additionalLocations = [
 export default function Locations() {
   return (
     <div className="pt-24">
+      <SEOHead
+        title="Service Areas | D4 Plumbing — West Metro Atlanta"
+        description="D4 Plumbing serves Temple, Villa Rica, Carrollton, Douglasville, Atlanta & surrounding West Metro Atlanta communities. Fast response, local experts."
+      />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -41,7 +46,7 @@ export default function Locations() {
               <span className="text-[#B08C47]">West Metro Atlanta</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              From Temple to Atlanta, we provide prompt, professional plumbing services 
+              From Temple to Atlanta, we provide prompt, professional plumbing services
               throughout West Metro Atlanta and surrounding communities.
             </p>
           </motion.div>

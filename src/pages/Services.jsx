@@ -3,6 +3,7 @@ import { Home, Building2, Wrench, ShowerHead, Waves, ThermometerSun, ArrowRight,
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
+import SEOHead from '@/components/SEOHead';
 
 const services = [
   {
@@ -88,6 +89,10 @@ const services = [
 export default function Services() {
   return (
     <div className="pt-24">
+      <SEOHead
+        title="Plumbing Services | D4 Plumbing — West Metro Atlanta"
+        description="Residential repairs, water heater installation, drain cleaning, new construction & commercial plumbing across West Metro Atlanta. Call 470-613-2447."
+      />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -110,7 +115,7 @@ export default function Services() {
               <span className="text-[#B08C47]">Services</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              From emergency repairs to complete installations, we deliver excellence 
+              From emergency repairs to complete installations, we deliver excellence
               in every project. Our experienced team is ready to solve your plumbing needs.
             </p>
           </motion.div>

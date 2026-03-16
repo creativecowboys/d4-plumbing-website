@@ -3,6 +3,7 @@ import { CheckCircle2, Award, Users, Clock, Heart, Shield, ArrowRight, Phone } f
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
+import SEOHead from '@/components/SEOHead';
 
 const values = [
   {
@@ -38,6 +39,10 @@ const milestones = [
 export default function About() {
   return (
     <div className="pt-24">
+      <SEOHead
+        title="About D4 Plumbing | 35+ Years Family-Owned Since 1989"
+        description="Learn about D4 Plumbing's 35-year legacy serving West Metro Atlanta with honest, quality plumbing. Family-owned and operated since 1989 in Temple, GA."
+      />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -59,7 +64,7 @@ export default function About() {
                 <span className="text-[#B08C47]">Quality</span>
               </h1>
               <p className="text-xl text-white/70 leading-relaxed mb-8">
-                For over 35 years, the DeFoor family has been serving West Metro Atlanta 
+                For over 35 years, the DeFoor family has been serving West Metro Atlanta
                 with professional plumbing services built on trust, quality, and integrity.
               </p>
               <div className="flex flex-wrap gap-8">
@@ -112,18 +117,18 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-[#252525]/70 leading-relaxed mb-6">
-                D4 Plumbing, originally DeFoor Plumbing, was founded in Temple, Georgia in 1989 
-                by a master plumber with a simple vision: provide honest, quality plumbing services 
+                D4 Plumbing, originally DeFoor Plumbing, was founded in Temple, Georgia in 1989
+                by a master plumber with a simple vision: provide honest, quality plumbing services
                 that families can trust.
               </p>
               <p className="text-[#252525]/70 leading-relaxed mb-6">
-                What started as a one-man operation has grown into a trusted name in West Metro Atlanta, 
-                serving thousands of homeowners and businesses. Today, with over 60 years of combined 
+                What started as a one-man operation has grown into a trusted name in West Metro Atlanta,
+                serving thousands of homeowners and businesses. Today, with over 60 years of combined
                 experience on our team, we continue the tradition of excellence that our founder established.
               </p>
               <p className="text-[#252525]/70 leading-relaxed">
-                We believe in using only the highest quality materials—like Charlotte Pipe and FlowGuard 
-                Gold CPVC—because your home deserves nothing less. Our commitment to quality, fair pricing, 
+                We believe in using only the highest quality materials—like Charlotte Pipe and FlowGuard
+                Gold CPVC—because your home deserves nothing less. Our commitment to quality, fair pricing,
                 and exceptional service has earned us the trust of our community.
               </p>
             </motion.div>

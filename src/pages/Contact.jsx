@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { motion } from 'framer-motion';
+import SEOHead from '@/components/SEOHead';
 
 const contactInfo = [
   { icon: Phone, label: 'Phone', value: '470-613-2447', href: 'tel:470-613-2447', action: 'Call now' },
@@ -42,6 +43,10 @@ export default function Contact() {
 
   return (
     <div className="pt-24">
+      <SEOHead
+        title="Contact D4 Plumbing | Free Estimate — West Metro Atlanta"
+        description="Get a free, no-obligation plumbing estimate from D4 Plumbing. Call 470-613-2447 or fill out our online form. We serve all of West Metro Atlanta."
+      />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -63,7 +68,7 @@ export default function Contact() {
               <span className="text-[#B08C47]">Free Estimate</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              Ready to get started? Contact us today for a free, no-obligation estimate. 
+              Ready to get started? Contact us today for a free, no-obligation estimate.
               We're here to help with all your plumbing needs.
             </p>
           </motion.div>
@@ -127,7 +132,7 @@ export default function Contact() {
                 Request a Quote
               </h2>
               <p className="text-[#252525]/70 mb-8 leading-relaxed">
-                Fill out the form and we'll get back to you within 24 hours with a free estimate. 
+                Fill out the form and we'll get back to you within 24 hours with a free estimate.
                 For urgent issues, please call us directly.
               </p>
 
