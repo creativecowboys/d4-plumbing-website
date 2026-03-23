@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -8,20 +8,33 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '(770) 562-0406', href: 'tel:7705620406', action: 'Call now' },
+  { icon: Phone, label: 'Phone', value: '(770) 480-9911', href: 'tel:7704809911', action: 'Call now' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com', action: 'Send email' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179', action: 'Get directions', href: 'https://maps.google.com/?q=902+McBrayer+Rd,+Temple,+GA+30179' },
-  { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM', action: 'Emergency 24/7' },
+  { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM', action: '' },
+];
+
+const teamContacts = [
+  {
+    name: 'Jimmy DeFoor',
+    phone: '(770) 480-9911',
+    phoneDial: '7704809911',
+    email: 'Jimmy@D4Plumbing.com',
+  },
+  {
+    name: 'Evan DeFoor',
+    phone: '(770) 853-6472',
+    phoneDial: '7708536472',
+    email: 'Evan@d4plumbing.com',
+  },
 ];
 
 const services = [
-  'Residential Repairs',
+  'Remodel / Repairs',
+  'New Construction',
+  'Commercial',
   'Water Heater Service',
   'Drain Cleaning',
-  'New Construction',
-  'Commercial Plumbing',
-  'Bathroom Remodeling',
-  'Emergency Service',
   'Other',
 ];
 
@@ -36,6 +49,7 @@ export default function Contact() {
     phone: '',
     service: '',
     location: '',
+    referral: '',
     message: '',
   });
 
@@ -54,16 +68,17 @@ export default function Contact() {
           phone: formData.phone,
           service: formData.service,
           location: formData.location,
+          referral: formData.referral,
           message: formData.message,
         }),
       });
       if (res.ok) {
         setSubmitted(true);
       } else {
-        alert('Something went wrong. Please call us directly at (770) 562-0406.');
+        alert('Something went wrong. Please call us directly at (770) 480-9911.');
       }
     } catch {
-      alert('Something went wrong. Please call us directly at (770) 562-0406.');
+      alert('Something went wrong. Please call us directly at (770) 480-9911.');
     } finally {
       setSubmitting(false);
     }
@@ -73,14 +88,14 @@ export default function Contact() {
     <div className="pt-24">
       <SEOHead
         title="Contact D4 Plumbing | Free Estimate — West Metro Atlanta"
-        description="Get a free, no-obligation plumbing estimate from D4 Plumbing. Call (770) 562-0406 or fill out our online form. We serve all of West Metro Atlanta."
+        description="Get a free, no-obligation plumbing estimate from D4 Plumbing. Call (770) 480-9911 or fill out our online form. We serve all of West Metro Atlanta."
       />
+
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#B08C47]/10 to-transparent" />
         </div>
-
         <div className="max-w-7xl mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -127,7 +142,7 @@ export default function Contact() {
                     </div>
                     <p className="text-[#252525]/50 text-sm mb-1">{item.label}</p>
                     <p className="text-[#252525] font-semibold mb-2">{item.value}</p>
-                    <p className="text-[#B08C47] text-sm font-medium">{item.action} →</p>
+                    {item.action && <p className="text-[#B08C47] text-sm font-medium">{item.action} →</p>}
                   </a>
                 ) : (
                   <div className="bg-white rounded-2xl p-6 shadow-sm h-full">
@@ -136,9 +151,56 @@ export default function Contact() {
                     </div>
                     <p className="text-[#252525]/50 text-sm mb-1">{item.label}</p>
                     <p className="text-[#252525] font-semibold mb-2">{item.value}</p>
-                    <p className="text-[#B08C47] text-sm font-medium">{item.action}</p>
+                    {item.action && <p className="text-[#B08C47] text-sm font-medium">{item.action}</p>}
                   </div>
                 )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Contacts */}
+      <section className="py-12 bg-[#F7F7F7] border-t border-[#252525]/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-2xl font-bold text-[#252525]">Contact Our Team Directly</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {teamContacts.map((person, idx) => (
+              <motion.div
+                key={person.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-[#B08C47]/10 rounded-full flex items-center justify-center mb-4">
+                  <User className="w-7 h-7 text-[#B08C47]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#252525] mb-3">{person.name}</h3>
+                <div className="space-y-2">
+                  <a
+                    href={`tel:${person.phoneDial}`}
+                    className="flex items-center gap-2 text-[#252525]/70 hover:text-[#B08C47] transition-colors text-sm"
+                  >
+                    <Phone className="w-4 h-4 text-[#B08C47]" />
+                    {person.phone}
+                  </a>
+                  <a
+                    href={`mailto:${person.email}`}
+                    className="flex items-center gap-2 text-[#252525]/70 hover:text-[#B08C47] transition-colors text-sm"
+                  >
+                    <Mail className="w-4 h-4 text-[#B08C47]" />
+                    {person.email}
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -163,24 +225,6 @@ export default function Contact() {
                 Fill out the form and we'll get back to you within 24 hours with a free estimate.
                 For urgent issues, please call us directly.
               </p>
-
-              <div className="bg-[#252525] rounded-2xl p-6 mb-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#B08C47] rounded-xl flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white/60 text-sm">Need immediate help?</p>
-                    <p className="text-white font-bold text-lg">Call (770) 562-0406</p>
-                  </div>
-                </div>
-                <a
-                  href="tel:7705620406"
-                  className="block w-full text-center bg-[#B08C47] hover:bg-[#9a7a3d] text-white py-3 rounded-full font-semibold transition-colors"
-                >
-                  Call Now
-                </a>
-              </div>
 
               <div className="space-y-4">
                 <h3 className="font-bold text-[#252525]">Why Choose Us?</h3>
@@ -299,6 +343,25 @@ export default function Contact() {
                           ))}
                         </SelectContent>
                       </Select>
+                    </div>
+
+                    <div>
+                      <label className="text-[#252525] font-medium text-sm mb-2 block">
+                        How did you find out about us?
+                      </label>
+                      <select
+                        value={formData.referral}
+                        onChange={(e) => setFormData({ ...formData, referral: e.target.value })}
+                        className="w-full h-12 px-3 border border-[#252525]/10 focus:border-[#B08C47] rounded-xl bg-white text-[#252525] text-sm outline-none focus:ring-1 focus:ring-[#B08C47]"
+                      >
+                        <option value="">Select an option...</option>
+                        <option value="Google">Google</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Word of Mouth">Word of Mouth</option>
+                        <option value="Yard Sign">Yard Sign</option>
+                        <option value="Repeat Customer">Repeat Customer</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
 
                     <div>
