@@ -91,7 +91,7 @@ export default function Services() {
     <div className="pt-24">
       <SEOHead
         title="Plumbing Services | D4 Plumbing — West Metro Atlanta"
-        description="Residential repairs, water heater installation, drain cleaning, new construction & commercial plumbing across West Metro Atlanta. Call (770) 562-0406."
+        description="Residential repairs, water heater installation, drain cleaning, new construction & commercial plumbing across West Metro Atlanta. Call (770) 480-9911."
       />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
@@ -182,11 +182,11 @@ export default function Services() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:7705620406"
+              href="tel:7704809911"
               className="inline-flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-[#B08C47] px-8 py-4 rounded-full font-semibold transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
-              (770) 562-0406
+              (770) 480-9911
             </a>
           </div>
         </div>
