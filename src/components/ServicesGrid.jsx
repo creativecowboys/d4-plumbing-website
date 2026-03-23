@@ -1,27 +1,27 @@
 import React from 'react';
-import { Home, Building2, Wrench, Droplets, Flame, ShowerHead, ArrowRight } from 'lucide-react';
+import { Home, Building2, Wrench, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 
 const services = [
   {
-    icon: Home,
-    title: 'Residential Repairs',
-    description: 'Leak detection, water heaters, fixture upgrades, and complete home plumbing solutions.',
-    features: ['Leak Detection', 'Water Heaters', 'Fixture Upgrades', 'Drain Cleaning'],
+    icon: Wrench,
+    title: 'Remodel / Repairs',
+    description: 'From bathroom and kitchen remodels to everyday plumbing repairs, we handle it all with precision and care.',
+    features: ['Bathroom Remodels', 'Leak Detection', 'Fixture Upgrades', 'Drain Cleaning'],
   },
   {
     icon: Building2,
     title: 'New Construction',
-    description: 'Full-service plumbing for residential and commercial builds from ground up.',
+    description: 'Full-service plumbing for residential and commercial builds from the ground up.',
     features: ['Residential Builds', 'Commercial Projects', 'Complete Systems', 'Code Compliance'],
   },
   {
-    icon: Wrench,
-    title: 'Commercial Services',
-    description: 'Specialized solutions for businesses and large-scale developments.',
-    features: ['Business Plumbing', 'Industrial Systems', 'Maintenance Plans', '24/7 Emergency'],
+    icon: Home,
+    title: 'Commercial',
+    description: 'Specialized plumbing solutions for businesses, offices, and large-scale developments.',
+    features: ['Business Plumbing', 'Industrial Systems', 'Maintenance Plans', 'Code Compliance'],
   },
 ];
 

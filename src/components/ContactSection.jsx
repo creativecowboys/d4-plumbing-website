@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '(770) 562-0406', href: 'tel:7705620406' },
+  { icon: Phone, label: 'Phone', value: '(770) 480-9911', href: 'tel:7704809911' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM' },
@@ -22,6 +22,7 @@ export default function ContactSection() {
     email: '',
     phone: '',
     service: '',
+    referral: '',
     message: '',
   });
 
@@ -39,16 +40,17 @@ export default function ContactSection() {
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
+          referral: formData.referral,
           message: formData.message,
         }),
       });
       if (res.ok) {
         setSubmitted(true);
       } else {
-        alert('Something went wrong. Please call us directly at (770) 562-0406.');
+        alert('Something went wrong. Please call us directly at (770) 480-9911.');
       }
     } catch {
-      alert('Something went wrong. Please call us directly at (770) 562-0406.');
+      alert('Something went wrong. Please call us directly at (770) 480-9911.');
     } finally {
       setSubmitting(false);
     }
@@ -112,18 +114,6 @@ export default function ContactSection() {
                 </div>
               </div>
             ))}
-
-            {/* Quick Call CTA */}
-            <div className="bg-[#252525] rounded-2xl p-6 text-center">
-              <p className="text-white/70 mb-3">Need immediate assistance?</p>
-              <a
-                href="tel:7705620406"
-                className="inline-flex items-center gap-2 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
-              >
-                <Phone className="w-5 h-5" />
-                Call Us Now
-              </a>
-            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -199,6 +189,25 @@ export default function ContactSection() {
                         className="h-12 border-[#252525]/10 focus:border-[#B08C47] rounded-xl"
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="text-[#252525] font-medium text-sm mb-2 block">
+                      How did you find out about us?
+                    </label>
+                    <select
+                      value={formData.referral}
+                      onChange={(e) => setFormData({ ...formData, referral: e.target.value })}
+                      className="w-full h-12 px-3 border border-[#252525]/10 focus:border-[#B08C47] rounded-xl bg-white text-[#252525] text-sm outline-none focus:ring-1 focus:ring-[#B08C47]"
+                    >
+                      <option value="">Select an option...</option>
+                      <option value="Google">Google</option>
+                      <option value="Facebook">Facebook</option>
+                      <option value="Word of Mouth">Word of Mouth</option>
+                      <option value="Yard Sign">Yard Sign</option>
+                      <option value="Repeat Customer">Repeat Customer</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
 
                   <div>

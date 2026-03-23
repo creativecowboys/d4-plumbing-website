@@ -12,9 +12,9 @@ const highlights = [
 
 const qualityPoints = [
   'Charlotte Pipe quality materials',
-  'FlowGuard Gold CPVC systems',
   'Licensed & insured professionals',
   'Guaranteed workmanship',
+  'Code-compliant installations',
 ];
 
 export default function AboutSection() {
@@ -72,15 +72,14 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-white/70 text-lg leading-relaxed mb-8">
-              At DeFoor Plumbing, we've built our reputation on trust, quality, and exceptional service. 
-              With over 60 years of combined experience, our family-owned business has been serving 
+              At DeFoor Plumbing, we've built our reputation on trust, quality, and exceptional service.
+              With over 60 years of combined experience, our family-owned business has been serving
               West Metro Atlanta with pride and dedication.
             </p>
 
             <p className="text-white/60 leading-relaxed mb-8">
-              We use only the highest quality materials, including Charlotte Pipe and FlowGuard Gold CPVC, 
-              because we believe your home deserves nothing less. Our commitment to excellence has made us 
-              the trusted choice for thousands of homeowners and businesses.
+              We use only the highest quality materials because we believe your home deserves nothing less.
+              Our commitment to excellence has made us the trusted choice for thousands of homeowners and businesses.
             </p>
 
             {/* Highlights */}

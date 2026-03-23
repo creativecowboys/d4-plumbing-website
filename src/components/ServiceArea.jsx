@@ -44,7 +44,7 @@ export default function ServiceArea() {
             </h2>
 
             <p className="text-[#252525]/70 text-lg leading-relaxed mb-10">
-              We proudly serve communities throughout West Metro Atlanta and surrounding areas. 
+              We proudly serve communities throughout West Metro Atlanta and surrounding areas.
               No matter where you are in our service area, you can count on prompt, professional service.
             </p>
 
@@ -115,10 +115,10 @@ export default function ServiceArea() {
 
                 <div className="flex flex-col gap-4">
                   <a
-                    href="tel:770-562-0406"
+                    href="tel:7704809911"
                     className="inline-flex items-center justify-center gap-3 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
                   >
-                    Call: 770-562-0406
+                    Call: 770-480-9911
                   </a>
                   <a
                     href="https://maps.google.com/?q=902+McBrayer+Rd,+Temple,+GA+30179"

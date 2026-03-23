@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '@/components/Hero';
-import TrustBar from '@/components/TrustBar';
 import ServicesGrid from '@/components/ServicesGrid';
 import AboutSection from '@/components/AboutSection';
 import ServiceArea from '@/components/ServiceArea';
@@ -12,10 +11,9 @@ export default function Home() {
     <div>
       <SEOHead
         title="D4 Plumbing | Expert Plumbing Services in West Metro Atlanta"
-        description="Family-owned plumbing company with 35+ years of experience serving Temple, Villa Rica, Carrollton, Douglasville & West Metro Atlanta. Free estimates. Call (770) 562-0406."
+        description="Family-owned plumbing company with 35+ years of experience serving Temple, Villa Rica, Carrollton, Douglasville & West Metro Atlanta. Free estimates. Call (770) 480-9911."
       />
       <Hero />
-      <TrustBar />
       <ServicesGrid />
       <AboutSection />
       <ServiceArea />
