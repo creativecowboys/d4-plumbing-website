@@ -97,11 +97,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="tel:7705620406"
+                    href="tel:7704809911"
                     className="flex items-center gap-3 text-white/60 hover:text-[#B08C47] transition-colors"
                   >
                     <Phone className="w-5 h-5 text-[#B08C47]" />
-                    (770) 562-0406
+                    (770) 480-9911
                   </a>
                 </li>
                 <li>
@@ -141,11 +141,11 @@ export default function Footer() {
       {/* Sticky Mobile Footer */}
       <div className="fixed bottom-0 left-0 right-0 md:hidden bg-[#B08C47] z-50 shadow-2xl shadow-black/30">
         <a
-          href="tel:7705620406"
+          href="tel:7704809911"
           className="flex items-center justify-center gap-3 py-4 text-white font-bold text-lg"
         >
           <Phone className="w-6 h-6" />
-          Call Now: (770) 562-0406
+          Call Now: (770) 480-9911
         </a>
       </div>
     </>
