@@ -67,7 +67,7 @@ export default function Hero() {
           >
             <Link
               to={createPageUrl('Contact')}
-              className="group inline-flex items-center justify-center gap-3 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg shadow-[#B08C47]/30 hover:shadow-xl hover:scale-105"
+              className="group hidden sm:inline-flex items-center justify-center gap-3 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg shadow-[#B08C47]/30 hover:shadow-xl hover:scale-105"
             >
               Request Free Estimate
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
