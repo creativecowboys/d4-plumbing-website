@@ -53,6 +53,7 @@ import Home from './pages/Home';
 import Locations from './pages/Locations';
 import Products from './pages/Products';
 import Services from './pages/Services';
+import PlumberTallapoosaGA from './pages/PlumberTallapoosaGA';
 import __Layout from './Layout.jsx';
 
 
@@ -63,6 +64,7 @@ export const PAGES = {
     "Locations": Locations,
     "Products": Products,
     "Services": Services,
+    "plumber-tallapoosa-ga": PlumberTallapoosaGA,
 }
 
 export const pagesConfig = {
