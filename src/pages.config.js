@@ -54,6 +54,18 @@ import Locations from './pages/Locations';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import PlumberTallapoosaGA from './pages/PlumberTallapoosaGA';
+import PlumberVillaRicaGA from './pages/PlumberVillaRicaGA';
+import PlumberCarrolltonGA from './pages/PlumberCarrolltonGA';
+import PlumberDouglasvilleGA from './pages/PlumberDouglasvilleGA';
+import PlumberBremenGA from './pages/PlumberBremenGA';
+import PlumberDallasGA from './pages/PlumberDallasGA';
+import PlumberHiramGA from './pages/PlumberHiramGA';
+import PlumberLithiaSpringsGA from './pages/PlumberLithiaSpringsGA';
+import PlumberAustellGA from './pages/PlumberAustellGA';
+import PlumberMabletonGA from './pages/PlumberMabletonGA';
+import PlumberPowderSpringsGA from './pages/PlumberPowderSpringsGA';
+import PlumberRockmartGA from './pages/PlumberRockmartGA';
+import PlumberBuchananGA from './pages/PlumberBuchananGA';
 import __Layout from './Layout.jsx';
 
 
@@ -65,6 +77,18 @@ export const PAGES = {
     "Products": Products,
     "Services": Services,
     "plumber-tallapoosa-ga": PlumberTallapoosaGA,
+    "plumber-villa-rica-ga": PlumberVillaRicaGA,
+    "plumber-carrollton-ga": PlumberCarrolltonGA,
+    "plumber-douglasville-ga": PlumberDouglasvilleGA,
+    "plumber-bremen-ga": PlumberBremenGA,
+    "plumber-dallas-ga": PlumberDallasGA,
+    "plumber-hiram-ga": PlumberHiramGA,
+    "plumber-lithia-springs-ga": PlumberLithiaSpringsGA,
+    "plumber-austell-ga": PlumberAustellGA,
+    "plumber-mableton-ga": PlumberMabletonGA,
+    "plumber-powder-springs-ga": PlumberPowderSpringsGA,
+    "plumber-rockmart-ga": PlumberRockmartGA,
+    "plumber-buchanan-ga": PlumberBuchananGA,
 }
 
 export const pagesConfig = {
