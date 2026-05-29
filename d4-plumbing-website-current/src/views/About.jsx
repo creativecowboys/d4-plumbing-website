@@ -87,7 +87,7 @@ export default function About() {
             >
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80"
                   alt="Professional plumber"
                   className="w-full h-full object-cover"
                 />

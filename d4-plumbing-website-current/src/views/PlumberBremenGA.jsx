@@ -156,7 +156,7 @@ export default function PlumberBremenGA() {
             <div className="lg:col-span-5 relative hidden lg:block">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl border-4 border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1628304433227-e4032bbd05ff?w=800&q=80"
                   alt={`Bremen, GA Plumbing Services - D4 Plumbing`}
                   className="w-full h-full object-cover"
                 />
@@ -278,7 +278,7 @@ export default function PlumberBremenGA() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1628304433227-e4032bbd05ff?w=800&q=80"
                   alt={`Bremen plumbing repairs - D4 Plumbing`}
                   className="w-full h-full object-cover"
                 />

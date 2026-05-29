@@ -153,7 +153,7 @@ export default function PlumberVillaRicaGA() {
             <div className="lg:col-span-5 relative hidden lg:block">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl border-4 border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1628304433227-e4032bbd05ff?w=800&q=80"
                   alt={`Villa Rica Plumbing Services - D4 Plumbing`}
                   className="w-full h-full object-cover"
                 />
@@ -275,7 +275,7 @@ export default function PlumberVillaRicaGA() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80"
                   alt={`Licensed Plumber Working in Villa Rica`}
                   className="w-full h-full object-cover"
                 />
