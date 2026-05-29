@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 const quickLinks = [
@@ -63,7 +63,7 @@ export default function Footer() {
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={createPageUrl(link.page)}
+                      href={createPageUrl(link.page)}
                       className="text-white/60 hover:text-[#B08C47] transition-colors"
                     >
                       {link.name}
@@ -98,7 +98,7 @@ export default function Footer() {
                 ].map((area) => (
                   <li key={area.name}>
                     <Link
-                      to={`/${area.slug}`}
+                      href={`/${area.slug}`}
                       className="text-white/60 hover:text-[#B08C47] transition-colors text-sm"
                     >
                       {area.name} Plumber

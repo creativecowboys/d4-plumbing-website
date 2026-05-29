@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -5,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '(770) 480-9911', href: 'tel:7704809911' },
+  { icon: Phone, label: 'Phone', value: '(770) 562-0406', href: 'tel:7705620406' },
   { icon: Mail, label: 'Email', value: 'info@d4plumbing.com', href: 'mailto:info@d4plumbing.com' },
   { icon: MapPin, label: 'Address', value: '902 McBrayer Rd, Temple, GA 30179' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri: 7AM-6PM' },
@@ -44,10 +46,10 @@ export default function ContactSection() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        alert('Something went wrong. Please call us directly at (770) 480-9911.');
+        alert('Something went wrong. Please call us directly at (770) 562-0406.');
       }
     } catch {
-      alert('Something went wrong. Please call us directly at (770) 480-9911.');
+      alert('Something went wrong. Please call us directly at (770) 562-0406.');
     } finally {
       setSubmitting(false);
     }

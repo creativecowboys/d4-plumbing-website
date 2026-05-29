@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
 import { Home, Building2, Wrench, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 
@@ -94,7 +96,7 @@ export default function ServicesGrid() {
 
                   {/* Link */}
                   <Link
-                    to={createPageUrl('Services')}
+                    href={createPageUrl('Services')}
                     className="inline-flex items-center gap-2 text-[#B08C47] font-semibold group/link"
                   >
                     Learn More
@@ -114,7 +116,7 @@ export default function ServicesGrid() {
           className="text-center mt-16"
         >
           <Link
-            to={createPageUrl('Services')}
+            href={createPageUrl('Services')}
             className="inline-flex items-center gap-3 bg-[#252525] hover:bg-[#B08C47] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Services

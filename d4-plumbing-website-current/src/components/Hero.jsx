@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
 import { Phone, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 
@@ -66,18 +68,18 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
-              to={createPageUrl('Contact')}
+              href={createPageUrl('Contact')}
               className="group hidden sm:inline-flex items-center justify-center gap-3 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg shadow-[#B08C47]/30 hover:shadow-xl hover:scale-105"
             >
               Request Free Estimate
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="tel:7704809911"
+              href="tel:7705620406"
               className="group hidden sm:inline-flex items-center justify-center gap-3 border-2 border-white/30 hover:border-[#B08C47] text-white hover:text-[#B08C47] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
             >
               <Phone className="w-5 h-5" />
-              Call (770) 480-9911
+              Call (770) 562-0406
             </a>
           </motion.div>
 

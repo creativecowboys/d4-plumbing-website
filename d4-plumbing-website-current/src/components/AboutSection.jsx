@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
 import { CheckCircle2, Award, Users, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 
@@ -105,7 +107,7 @@ export default function AboutSection() {
             </div>
 
             <Link
-              to={createPageUrl('About')}
+              href={createPageUrl('About')}
               className="inline-flex items-center gap-3 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Learn More About Us

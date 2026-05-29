@@ -40,11 +40,11 @@ const getAppParams = () => {
 		storage.removeItem('token');
 	}
 	return {
-		appId: getAppParamValue("app_id", { defaultValue: import.meta.env.VITE_BASE44_APP_ID }),
+		appId: getAppParamValue("app_id", { defaultValue: typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BASE44_APP_ID || process.env.VITE_BASE44_APP_ID : undefined }),
 		token: getAppParamValue("access_token", { removeFromUrl: true }),
-		fromUrl: getAppParamValue("from_url", { defaultValue: window.location.href }),
-		functionsVersion: getAppParamValue("functions_version", { defaultValue: import.meta.env.VITE_BASE44_FUNCTIONS_VERSION }),
-		appBaseUrl: getAppParamValue("app_base_url", { defaultValue: import.meta.env.VITE_BASE44_APP_BASE_URL }),
+		fromUrl: getAppParamValue("from_url", { defaultValue: isNode ? "" : window.location.href }),
+		functionsVersion: getAppParamValue("functions_version", { defaultValue: typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BASE44_FUNCTIONS_VERSION || process.env.VITE_BASE44_FUNCTIONS_VERSION : undefined }),
+		appBaseUrl: getAppParamValue("app_base_url", { defaultValue: typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BASE44_APP_BASE_URL || process.env.VITE_BASE44_APP_BASE_URL : undefined }),
 	}
 }
 

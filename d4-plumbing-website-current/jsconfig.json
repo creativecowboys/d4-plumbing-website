@@ -6,34 +6,26 @@
         "./src/*"
       ]
     },
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "lib": [
       "esnext",
       "dom"
     ],
     "target": "esnext",
-    "checkJs": true,
+    "checkJs": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "types": [
-      "vite/client"
-    ]
+    "resolveJsonModule": true
   },
   "include": [
-    "src/components/**/*.js",
-    "src/pages/**/*.jsx",
-    "src/Layout.jsx"
+    "src/**/*",
+    ".next/types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "src/vite-plugins",
-    "src/components/ui",
-    "src/api",
-    "src/lib"
+    "dist"
   ]
 }

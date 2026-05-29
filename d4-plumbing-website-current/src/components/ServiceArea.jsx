@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
 import { MapPin, CheckCircle2, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 
@@ -52,12 +54,12 @@ export default function ServiceArea() {
             <div className="grid grid-cols-2 gap-4 mb-10">
               {locations.map((location, idx) => {
                 const targetUrl = location.slug.startsWith('plumber')
-                  ? `/${location.slug}/`
+                  ? `/${location.slug}`
                   : createPageUrl(location.slug);
                 return (
                   <Link
                     key={location.name}
-                    to={targetUrl}
+                    href={targetUrl}
                     className="block hover:scale-[1.02] transition-transform duration-200"
                   >
                     <div className="h-full">
@@ -91,7 +93,7 @@ export default function ServiceArea() {
             </div>
 
             <Link
-              to={createPageUrl('Locations')}
+              href={createPageUrl('Locations')}
               className="inline-flex items-center gap-3 text-[#B08C47] font-semibold group"
             >
               View All Service Areas

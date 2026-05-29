@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 const navItems = [
@@ -43,7 +45,7 @@ export default function Header() {
       <header className="fixed top-9 left-0 right-0 z-50 bg-[#252525]/95 backdrop-blur-md shadow-2xl py-3 transition-all duration-500">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link to={createPageUrl('Home')} className="flex items-center group">
+          <Link href={createPageUrl('Home')} className="flex items-center group">
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69839312b784d053c6a2116e/00d571434_D4Logo.png"
               alt="D4 Plumbing - DeFoor Plumbing"
@@ -56,7 +58,7 @@ export default function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={createPageUrl(item.page)}
+                href={createPageUrl(item.page)}
                 className="text-white/80 hover:text-[#B08C47] text-sm font-bold tracking-wide transition-colors relative group"
               >
                 {item.name}
@@ -68,7 +70,7 @@ export default function Header() {
           {/* CTA Button */}
           <div className="flex items-center gap-4">
             <Link
-              to={createPageUrl('Contact')}
+              href={createPageUrl('Contact')}
               className="hidden md:flex items-center gap-2 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <span>Get a Free Estimate</span>
@@ -93,7 +95,7 @@ export default function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={createPageUrl(item.page)}
+                href={createPageUrl(item.page)}
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-white/90 hover:text-[#B08C47] text-lg font-medium py-2 border-b border-white/10 transition-colors"
               >
