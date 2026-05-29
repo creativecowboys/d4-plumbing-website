@@ -152,7 +152,7 @@ export default function PlumberDouglasvilleGA() {
             <div className="lg:col-span-5 relative hidden lg:block">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl border-4 border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1628304433227-e4032bbd05ff?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1669829264745-33f0a82cad27?w=800&q=80"
                   alt={`Douglasville Plumbing Services - D4 Plumbing`}
                   className="w-full h-full object-cover"
                 />
