@@ -54,6 +54,11 @@ import Locations from './pages/Locations';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import PlumberTallapoosaGA from './pages/PlumberTallapoosaGA';
+import PlumberVillaRicaGA from './pages/PlumberVillaRicaGA';
+import PlumberDouglasvilleGA from './pages/PlumberDouglasvilleGA';
+import PlumberCarrolltonGA from './pages/PlumberCarrolltonGA';
+import PlumberDallasGA from './pages/PlumberDallasGA';
+import PlumberBremenGA from './pages/PlumberBremenGA';
 import __Layout from './Layout.jsx';
 
 
@@ -65,6 +70,11 @@ export const PAGES = {
     "Products": Products,
     "Services": Services,
     "plumber-tallapoosa-ga": PlumberTallapoosaGA,
+    "plumber-villa-rica-ga": PlumberVillaRicaGA,
+    "plumber-douglasville-ga": PlumberDouglasvilleGA,
+    "plumber-carrollton-ga": PlumberCarrolltonGA,
+    "plumber-dallas-ga": PlumberDallasGA,
+    "plumber-bremen-ga": PlumberBremenGA,
 }
 
 export const pagesConfig = {

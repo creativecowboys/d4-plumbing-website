@@ -91,7 +91,7 @@ export default function Services() {
     <div className="pt-24">
       <SEOHead
         title="Plumbing Services | D4 Plumbing — West Metro Atlanta"
-        description="Residential repairs, water heater installation, drain cleaning, new construction & commercial plumbing across West Metro Atlanta. Call (770) 480-9911."
+        description="Residential repairs, water heater installation, drain cleaning, new construction & commercial plumbing across West Metro Atlanta. Call (770) 562-0406."
       />
       {/* Hero Section */}
       <section className="bg-[#252525] py-20 lg:py-28 relative overflow-hidden">
@@ -160,6 +160,35 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Local Coverage Section */}
+      <section className="py-16 bg-[#F1EADA] border-t border-[#252525]/5">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span className="text-[#B08C47] font-semibold text-sm tracking-widest uppercase mb-3 block">
+            Local Coverage
+          </span>
+          <h2 className="text-3xl font-bold text-[#252525] mb-8">
+            Plumbing Services in Your Area
+          </h2>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+            {[
+              { name: 'Villa Rica', slug: 'plumber-villa-rica-ga', anchor: 'Villa Rica plumber' },
+              { name: 'Douglasville', slug: 'plumber-douglasville-ga', anchor: 'Douglasville plumber' },
+              { name: 'Carrollton', slug: 'plumber-carrollton-ga', anchor: 'plumber in Carrollton' },
+              { name: 'Dallas, GA', slug: 'plumber-dallas-ga', anchor: 'plumber in Dallas, GA' },
+              { name: 'Bremen', slug: 'plumber-bremen-ga', anchor: 'Bremen plumber' }
+            ].map((city) => (
+              <Link
+                key={city.name}
+                to={`/${city.slug}/`}
+                className="text-[#252525]/80 hover:text-[#B08C47] font-semibold text-lg transition-colors border-b-2 border-transparent hover:border-[#B08C47] pb-1"
+              >
+                {city.anchor}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-[#B08C47] relative overflow-hidden">
         <div className="absolute inset-0">
@@ -182,11 +211,11 @@ export default function Services() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:7704809911"
+              href="tel:+17705620406"
               className="inline-flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-[#B08C47] px-8 py-4 rounded-full font-semibold transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
-              (770) 480-9911
+              (770) 562-0406
             </a>
           </div>
         </div>

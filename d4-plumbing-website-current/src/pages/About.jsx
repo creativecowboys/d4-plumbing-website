@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Award, Users, Clock, Heart, Shield, ArrowRight, Phone } from 'lucide-react';
+import { CheckCircle2, Award, Clock, Heart, Shield, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';

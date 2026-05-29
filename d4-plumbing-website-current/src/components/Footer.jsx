@@ -27,7 +27,7 @@ export default function Footer() {
       {/* Main Footer */}
       <footer className="bg-[#252525] text-white pt-20 pb-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             {/* Brand Column */}
             <div>
               <div className="mb-6">
@@ -85,6 +85,29 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Service Areas */}
+            <div>
+              <h4 className="font-bold text-lg mb-6">Service Areas</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: 'Villa Rica', slug: 'plumber-villa-rica-ga' },
+                  { name: 'Douglasville', slug: 'plumber-douglasville-ga' },
+                  { name: 'Carrollton', slug: 'plumber-carrollton-ga' },
+                  { name: 'Dallas, GA', slug: 'plumber-dallas-ga' },
+                  { name: 'Bremen', slug: 'plumber-bremen-ga' },
+                ].map((area) => (
+                  <li key={area.name}>
+                    <Link
+                      to={`/${area.slug}`}
+                      className="text-white/60 hover:text-[#B08C47] transition-colors text-sm"
+                    >
+                      {area.name} Plumber
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Contact Info */}
             <div>
               <h4 className="font-bold text-lg mb-6">Contact Us</h4>
@@ -97,11 +120,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="tel:7704809911"
+                    href="tel:+17705620406"
                     className="flex items-center gap-3 text-white/60 hover:text-[#B08C47] transition-colors"
                   >
                     <Phone className="w-5 h-5 text-[#B08C47]" />
-                    (770) 480-9911
+                    (770) 562-0406
                   </a>
                 </li>
                 <li>
@@ -141,11 +164,11 @@ export default function Footer() {
       {/* Sticky Mobile Footer */}
       <div className="fixed bottom-0 left-0 right-0 md:hidden bg-[#B08C47] z-50 shadow-2xl shadow-black/30">
         <a
-          href="tel:7704809911"
+          href="tel:+17705620406"
           className="flex items-center justify-center gap-3 py-4 text-white font-bold text-lg"
         >
           <Phone className="w-6 h-6" />
-          Call Now: (770) 480-9911
+          Call Now: (770) 562-0406
         </a>
       </div>
     </>

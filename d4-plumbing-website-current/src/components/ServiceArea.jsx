@@ -5,14 +5,14 @@ import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 
 const locations = [
-  { name: 'Temple', featured: true },
-  { name: 'Villa Rica', featured: true },
-  { name: 'Carrollton', featured: true },
-  { name: 'Bremen', featured: true },
-  { name: 'Dallas', featured: true },
-  { name: 'Douglasville', featured: true },
-  { name: 'Hiram', featured: true },
-  { name: 'Atlanta', featured: true },
+  { name: 'Temple', featured: true, slug: 'Locations' },
+  { name: 'Villa Rica', featured: true, slug: 'plumber-villa-rica-ga' },
+  { name: 'Carrollton', featured: true, slug: 'plumber-carrollton-ga' },
+  { name: 'Bremen', featured: true, slug: 'plumber-bremen-ga' },
+  { name: 'Dallas', featured: true, slug: 'plumber-dallas-ga' },
+  { name: 'Douglasville', featured: true, slug: 'plumber-douglasville-ga' },
+  { name: 'Hiram', featured: true, slug: 'Locations' },
+  { name: 'Atlanta', featured: true, slug: 'Locations' },
 ];
 
 export default function ServiceArea() {
@@ -50,32 +50,44 @@ export default function ServiceArea() {
 
             {/* Locations Grid */}
             <div className="grid grid-cols-2 gap-4 mb-10">
-              {locations.map((location, idx) => (
-                <motion.div
-                  key={location.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 ${
-                    location.featured
-                      ? 'bg-white shadow-md border border-[#B08C47]/20'
-                      : 'bg-[#F1EADA]/50'
-                  }`}
-                >
-                  <MapPin className={`w-5 h-5 flex-shrink-0 ${
-                    location.featured ? 'text-[#B08C47]' : 'text-[#252525]/40'
-                  }`} />
-                  <span className={`font-medium ${
-                    location.featured ? 'text-[#252525]' : 'text-[#252525]/60'
-                  }`}>
-                    {location.name}
-                  </span>
-                  {location.featured && (
-                    <CheckCircle2 className="w-4 h-4 text-[#B08C47] ml-auto" />
-                  )}
-                </motion.div>
-              ))}
+              {locations.map((location, idx) => {
+                const targetUrl = location.slug.startsWith('plumber')
+                  ? `/${location.slug}/`
+                  : createPageUrl(location.slug);
+                return (
+                  <Link
+                    key={location.name}
+                    to={targetUrl}
+                    className="block hover:scale-[1.02] transition-transform duration-200"
+                  >
+                    <div className="h-full">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.05 }}
+                        className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 h-full ${
+                          location.featured
+                            ? 'bg-white shadow-md border border-[#B08C47]/20 hover:border-[#B08C47]'
+                            : 'bg-[#F1EADA]/50'
+                        }`}
+                      >
+                        <MapPin className={`w-5 h-5 flex-shrink-0 ${
+                          location.featured ? 'text-[#B08C47]' : 'text-[#252525]/40'
+                        }`} />
+                        <span className={`font-medium ${
+                          location.featured ? 'text-[#252525]' : 'text-[#252525]/60'
+                        }`}>
+                          {location.name}
+                        </span>
+                        {location.featured && (
+                          <CheckCircle2 className="w-4 h-4 text-[#B08C47] ml-auto" />
+                        )}
+                      </motion.div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
 
             <Link
@@ -115,10 +127,10 @@ export default function ServiceArea() {
 
                 <div className="flex flex-col gap-4">
                   <a
-                    href="tel:7704809911"
+                    href="tel:+17705620406"
                     className="inline-flex items-center justify-center gap-3 bg-[#B08C47] hover:bg-[#9a7a3d] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
                   >
-                    Call: 770-480-9911
+                    Call: (770) 562-0406
                   </a>
                   <a
                     href="https://maps.google.com/?q=902+McBrayer+Rd,+Temple,+GA+30179"
