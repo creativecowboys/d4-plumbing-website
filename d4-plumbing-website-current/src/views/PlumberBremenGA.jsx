@@ -278,8 +278,8 @@ export default function PlumberBremenGA() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
                 <img
-                  src="/plumbing_repair.png"
-                  alt={`Bremen plumbing repairs - D4 Plumbing`}
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80"
+                  alt={`Plumber working in Bremen, GA`}
                   className="w-full h-full object-cover"
                 />
               </div>
