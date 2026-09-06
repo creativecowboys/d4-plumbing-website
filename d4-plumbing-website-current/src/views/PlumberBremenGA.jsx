@@ -49,11 +49,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-bremen-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-bremen-ga#business",
   "name": "D4 Plumbing - Bremen",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/bremen-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-bremen-ga/",
+  "image": "https://www.d4plumbing.com/images/bremen-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-bremen-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {

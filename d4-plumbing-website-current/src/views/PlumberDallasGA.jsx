@@ -46,11 +46,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-dallas-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-dallas-ga#business",
   "name": "D4 Plumbing - Dallas, GA",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/dallas-ga-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-dallas-ga/",
+  "image": "https://www.d4plumbing.com/images/dallas-ga-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-dallas-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {

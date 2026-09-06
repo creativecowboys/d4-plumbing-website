@@ -15,8 +15,16 @@ const primaryLocations = [
 ];
 
 const additionalLocations = [
-  'Bremen', 'Dallas', 'Hiram', 'Lithia Springs', 'Austell',
-  'Mableton', 'Powder Springs', 'Rockmart', 'Buchanan', 'Tallapoosa',
+  { name: 'Bremen', slug: 'plumber-bremen-ga' },
+  { name: 'Dallas', slug: 'plumber-dallas-ga' },
+  { name: 'Hiram', slug: 'plumber-hiram-ga' },
+  { name: 'Lithia Springs', slug: 'plumber-lithia-springs-ga' },
+  { name: 'Austell', slug: 'plumber-austell-ga' },
+  { name: 'Mableton', slug: 'plumber-mableton-ga' },
+  { name: 'Powder Springs', slug: 'plumber-powder-springs-ga' },
+  { name: 'Rockmart', slug: 'plumber-rockmart-ga' },
+  { name: 'Buchanan', slug: 'plumber-buchanan-ga' },
+  { name: 'Tallapoosa', slug: 'plumber-tallapoosa-ga' },
 ];
 
 export default function Locations() {
@@ -116,15 +124,19 @@ export default function Locations() {
           <div className="flex flex-wrap justify-center gap-3">
             {additionalLocations.map((location, idx) => (
               <motion.span
-                key={location}
+                key={location.slug}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="inline-flex items-center gap-2 bg-white text-[#252525] px-5 py-2.5 rounded-full text-sm font-medium shadow-sm"
               >
-                <CheckCircle2 className="w-4 h-4 text-[#B08C47]" />
-                {location}
+                <Link
+                  href={`/${location.slug}`}
+                  className="inline-flex items-center gap-2 bg-white text-[#252525] hover:text-[#B08C47] px-5 py-2.5 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-[#B08C47]" />
+                  {location.name} Plumber
+                </Link>
               </motion.span>
             ))}
           </div>

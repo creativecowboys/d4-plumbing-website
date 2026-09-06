@@ -6,16 +6,16 @@ export const metadata = {
   description: 'Local Dallas, GA plumber serving Paulding County since 1979. Seven Hills, Riverwood, Hiram-Dallas area. Water heaters, drains, leaks, emergency service. Free estimates.',
   keywords: 'plumber Dallas GA, Dallas GA plumber, plumbing Dallas Georgia, Paulding County plumber, emergency plumber Dallas GA, water heater Dallas GA',
   alternates: {
-    canonical: 'https://d4plumbing.com/plumber-dallas-ga/',
+    canonical: 'https://www.d4plumbing.com/plumber-dallas-ga',
   },
   openGraph: {
     type: 'website',
     title: 'Plumber in Dallas, GA | D4 Plumbing | 35+ Years Local',
     description: 'Trusted Paulding County plumber serving Dallas, Seven Hills & Riverwood since 1979. Free estimates. Same-day service.',
-    url: 'https://d4plumbing.com/plumber-dallas-ga/',
+    url: 'https://www.d4plumbing.com/plumber-dallas-ga',
     images: [
       {
-        url: 'https://d4plumbing.com/images/dallas-ga-plumber.jpg',
+        url: 'https://www.d4plumbing.com/images/dallas-ga-plumber.jpg',
       },
     ],
   },
@@ -59,11 +59,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-dallas-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-dallas-ga#business",
   "name": "D4 Plumbing - Dallas, GA",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/dallas-ga-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-dallas-ga/",
+  "image": "https://www.d4plumbing.com/images/dallas-ga-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-dallas-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {
