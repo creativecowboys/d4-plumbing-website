@@ -90,11 +90,19 @@ export default function Footer() {
               <h4 className="font-bold text-lg mb-6">Service Areas</h4>
               <ul className="space-y-3">
                 {[
-                  { name: 'Villa Rica', slug: 'plumber-villa-rica-ga' },
-                  { name: 'Douglasville', slug: 'plumber-douglasville-ga' },
-                  { name: 'Carrollton', slug: 'plumber-carrollton-ga' },
-                  { name: 'Dallas, GA', slug: 'plumber-dallas-ga' },
-                  { name: 'Bremen', slug: 'plumber-bremen-ga' },
+                  { name: "Villa Rica", slug: 'plumber-villa-rica-ga' },
+                  { name: "Douglasville", slug: 'plumber-douglasville-ga' },
+                  { name: "Carrollton", slug: 'plumber-carrollton-ga' },
+                  { name: "Dallas, GA", slug: 'plumber-dallas-ga' },
+                  { name: "Bremen", slug: 'plumber-bremen-ga' },
+                  { name: "Hiram", slug: 'plumber-hiram-ga' },
+                  { name: "Powder Springs", slug: 'plumber-powder-springs-ga' },
+                  { name: "Lithia Springs", slug: 'plumber-lithia-springs-ga' },
+                  { name: "Austell", slug: 'plumber-austell-ga' },
+                  { name: "Mableton", slug: 'plumber-mableton-ga' },
+                  { name: "Rockmart", slug: 'plumber-rockmart-ga' },
+                  { name: "Buchanan", slug: 'plumber-buchanan-ga' },
+                  { name: "Tallapoosa", slug: 'plumber-tallapoosa-ga' },
                 ].map((area) => (
                   <li key={area.name}>
                     <Link

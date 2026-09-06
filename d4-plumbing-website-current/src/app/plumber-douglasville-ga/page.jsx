@@ -6,16 +6,16 @@ export const metadata = {
   description: 'Local Douglasville, GA plumber serving Chapel Hill, Mt. Carmel & all of Douglas County since 1979. Water heaters, drain cleaning, leak repair, 24/7 emergency. Call (770) 562-0406.',
   keywords: 'plumber Douglasville GA, Douglasville plumber, plumbing Douglasville, emergency plumber Douglasville, water heater Douglasville, drain cleaning Douglasville GA',
   alternates: {
-    canonical: 'https://d4plumbing.com/plumber-douglasville-ga/',
+    canonical: 'https://www.d4plumbing.com/plumber-douglasville-ga',
   },
   openGraph: {
     type: 'website',
     title: 'Douglasville Plumber | D4 Plumbing | 35+ Years Local',
     description: 'Trusted Douglasville plumber serving Chapel Hill, Mt. Carmel, Arbor Place & all of Douglas County since 1979. Free estimates, same-day service.',
-    url: 'https://d4plumbing.com/plumber-douglasville-ga/',
+    url: 'https://www.d4plumbing.com/plumber-douglasville-ga',
     images: [
       {
-        url: 'https://d4plumbing.com/images/douglasville-plumber.jpg',
+        url: 'https://www.d4plumbing.com/images/douglasville-plumber.jpg',
       },
     ],
   },
@@ -59,11 +59,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-douglasville-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-douglasville-ga#business",
   "name": "D4 Plumbing - Douglasville",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/douglasville-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-douglasville-ga/",
+  "image": "https://www.d4plumbing.com/images/douglasville-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-douglasville-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {

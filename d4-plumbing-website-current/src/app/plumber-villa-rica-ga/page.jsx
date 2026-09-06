@@ -6,16 +6,16 @@ export const metadata = {
   description: 'Family-owned plumber serving Villa Rica, GA since 1979. Water heaters, drain cleaning, leak repair & 24/7 emergency plumbing. Free estimates. Call (770) 562-0406.',
   keywords: 'plumber Villa Rica GA, Villa Rica plumber, plumbing Villa Rica, emergency plumber Villa Rica, water heater Villa Rica, drain cleaning Villa Rica',
   alternates: {
-    canonical: 'https://d4plumbing.com/plumber-villa-rica-ga/',
+    canonical: 'https://www.d4plumbing.com/plumber-villa-rica-ga',
   },
   openGraph: {
     type: 'website',
     title: 'Villa Rica Plumber | D4 Plumbing | 35+ Years Local',
     description: 'Trusted Villa Rica plumber serving Mirror Lake, Fairfield Plantation & all of Villa Rica since 1979. Free estimates, same-day service.',
-    url: 'https://d4plumbing.com/plumber-villa-rica-ga/',
+    url: 'https://www.d4plumbing.com/plumber-villa-rica-ga',
     images: [
       {
-        url: 'https://d4plumbing.com/images/villa-rica-plumber.jpg',
+        url: 'https://www.d4plumbing.com/images/villa-rica-plumber.jpg',
       },
     ],
   },
@@ -59,11 +59,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-villa-rica-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-villa-rica-ga#business",
   "name": "D4 Plumbing - Villa Rica",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/villa-rica-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-villa-rica-ga/",
+  "image": "https://www.d4plumbing.com/images/villa-rica-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-villa-rica-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {

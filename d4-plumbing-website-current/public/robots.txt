@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://d4plumbing.com/sitemap.xml
+Sitemap: https://www.d4plumbing.com/sitemap.xml

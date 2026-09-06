@@ -6,16 +6,16 @@ export const metadata = {
   description: "Carrollton, GA's local plumber since 1979. Serving Adamson Square, UWG area, Maple Street & all of Carroll County. Water heaters, drains, leaks, 24/7 emergency. Free estimates.",
   keywords: 'plumber Carrollton GA, Carrollton plumber, plumbing Carrollton, emergency plumber Carrollton GA, water heater Carrollton, drain cleaning Carrollton',
   alternates: {
-    canonical: 'https://d4plumbing.com/plumber-carrollton-ga/',
+    canonical: 'https://www.d4plumbing.com/plumber-carrollton-ga',
   },
   openGraph: {
     type: 'website',
     title: 'Carrollton GA Plumber | D4 Plumbing | 35+ Years Local',
     description: 'Trusted Carrollton, GA plumber. Family-owned since 1979. Same-day service to Carrollton, UWG area & all of Carroll County.',
-    url: 'https://d4plumbing.com/plumber-carrollton-ga/',
+    url: 'https://www.d4plumbing.com/plumber-carrollton-ga',
     images: [
       {
-        url: 'https://d4plumbing.com/images/carrollton-plumber.jpg',
+        url: 'https://www.d4plumbing.com/images/carrollton-plumber.jpg',
       },
     ],
   },
@@ -63,11 +63,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-carrollton-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-carrollton-ga#business",
   "name": "D4 Plumbing - Carrollton",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/carrollton-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-carrollton-ga/",
+  "image": "https://www.d4plumbing.com/images/carrollton-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-carrollton-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {

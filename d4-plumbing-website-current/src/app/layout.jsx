@@ -20,7 +20,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://d4plumbing.com'),
+  metadataBase: new URL('https://www.d4plumbing.com'),
   title: 'D4 Plumbing | Expert Plumbing Services in West Metro Atlanta',
   description: 'Family-owned plumbing company with 35+ years of experience serving Temple, Villa Rica, Carrollton, Douglasville & West Metro Atlanta. Free estimates. Call (770) 562-0406.',
   keywords: 'plumber West Metro Atlanta, plumbing Temple GA, D4 Plumbing, DeFoor Plumbing, water heater installation, drain cleaning, plumbing repair',

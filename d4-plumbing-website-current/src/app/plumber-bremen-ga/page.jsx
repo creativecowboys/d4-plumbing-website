@@ -6,16 +6,16 @@ export const metadata = {
   description: 'Local Bremen, GA plumber since 1979. Haralson County water heaters, drain cleaning, leak repair & 24/7 emergency plumbing. Free estimates. Call (770) 562-0406.',
   keywords: 'plumber Bremen GA, Bremen plumber, plumbing Bremen GA, Haralson County plumber, emergency plumber Bremen, water heater Bremen GA',
   alternates: {
-    canonical: 'https://d4plumbing.com/plumber-bremen-ga/',
+    canonical: 'https://www.d4plumbing.com/plumber-bremen-ga',
   },
   openGraph: {
     type: 'website',
     title: 'Bremen GA Plumber | D4 Plumbing | 35+ Years Local',
     description: 'Trusted Bremen, GA plumber. Family-owned since 1979. Same-day service for Bremen, Tallapoosa, Buchanan, and Haralson County.',
-    url: 'https://d4plumbing.com/plumber-bremen-ga/',
+    url: 'https://www.d4plumbing.com/plumber-bremen-ga',
     images: [
       {
-        url: 'https://d4plumbing.com/images/bremen-plumber.jpg',
+        url: 'https://www.d4plumbing.com/images/bremen-plumber.jpg',
       },
     ],
   },
@@ -63,11 +63,11 @@ const faqs = [
 const schemaPlumber = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "@id": "https://d4plumbing.com/plumber-bremen-ga/#business",
+  "@id": "https://www.d4plumbing.com/plumber-bremen-ga#business",
   "name": "D4 Plumbing - Bremen",
   "alternateName": "DeFoor Plumbing",
-  "image": "https://d4plumbing.com/images/bremen-plumber.jpg",
-  "url": "https://d4plumbing.com/plumber-bremen-ga/",
+  "image": "https://www.d4plumbing.com/images/bremen-plumber.jpg",
+  "url": "https://www.d4plumbing.com/plumber-bremen-ga",
   "telephone": "+17705620406",
   "priceRange": "$$",
   "address": {

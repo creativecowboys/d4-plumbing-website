@@ -13,7 +13,7 @@ const locations = [
   { name: 'Bremen', featured: true, slug: 'plumber-bremen-ga' },
   { name: 'Dallas', featured: true, slug: 'plumber-dallas-ga' },
   { name: 'Douglasville', featured: true, slug: 'plumber-douglasville-ga' },
-  { name: 'Hiram', featured: true, slug: 'Locations' },
+  { name: 'Hiram', featured: true, slug: 'plumber-hiram-ga' },
   { name: 'Atlanta', featured: true, slug: 'Locations' },
 ];
 
