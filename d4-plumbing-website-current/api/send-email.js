@@ -1,19 +1,51 @@
 // Vercel serverless function — POST /api/send-email
 // Sends D4 Plumbing contact/quote form submissions via Resend.
 
+import { pitchNote, pitchSubjectPrefix, screenPitch } from './_lib/pitch.js';
+
 export const config = {
   runtime: 'edge',
 };
 
-const SPAM_KEYWORDS = [
-  'seo', 'marketing', 'software', 'ai ', ' ai,', 'artificial intelligence',
-  'digital marketing', 'social media', 'backlink', 'rank', 'web design agency',
-  'web development agency', 'outsource', 'freelance', 'content writing',
-];
+// Spam screening.
+// Bots: a hidden "website" field people never fill, a form submitted in under
+// 3 seconds, or a post that did not come from one of our pages. Those get a
+// normal-looking success and nothing is sent.
+// Vendor pitches (SEO / web / marketing / app / loan offers, see
+// _lib/pitch.js): this site keeps no other copy of a submission, so a pitch
+// is still emailed, with "[Filtered: pitch]" in the subject; a borderline one
+// gets "[Check]". (This replaces a substring keyword list that silently
+// dropped real customers: "rank" matched "Frank", "ai " matched "Thai ".)
+const OWN_HOSTS = ['d4plumbing.com', 'www.d4plumbing.com', 'defoorplumbing.com', 'www.defoorplumbing.com'];
+const MIN_FORM_MS = 3000;
 
-function isSpam(fields) {
-  const text = Object.values(fields).join(' ').toLowerCase();
-  return SPAM_KEYWORDS.some((kw) => text.includes(kw));
+function hostOf(value) {
+  if (!value || value === 'null') return '';
+  try {
+    return new URL(value).hostname.toLowerCase();
+  } catch {
+    return '';
+  }
+}
+
+function botReason(req, body) {
+  if (typeof body.website === 'string' && body.website.trim()) return 'honeypot filled';
+  if (typeof body.formAge === 'number' && body.formAge >= 0 && body.formAge < MIN_FORM_MS) {
+    return `submitted in ${Math.round(body.formAge)}ms`;
+  }
+  const from = hostOf(req.headers.get('origin')) || hostOf(req.headers.get('referer'));
+  const own = (req.headers.get('x-forwarded-host') || req.headers.get('host') || '').split(',')[0].trim().split(':')[0].toLowerCase();
+  if (!from) return 'no origin (posted directly)';
+  if (!OWN_HOSTS.includes(from) && from !== own) return `posted from ${from}`;
+  return '';
+}
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 export default async function handler(req) {
@@ -44,13 +76,20 @@ export default async function handler(req) {
 
   const { name, email, phone, service, location, referral, message } = body;
 
-  // Basic spam guard
-  if (isSpam({ name, email, message, service, referral })) {
-    // Silently drop spam — return 200 so bots don't retry
+  const bot = botReason(req, body);
+  if (bot) {
+    console.warn(`[send-email] dropped bot submission: ${bot}`);
+    // Same answer a person gets, so bots learn nothing.
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
+  }
+
+  const pitch = screenPitch([message, referral], { profile: 'default' });
+  const note = pitchNote(pitch);
+  if (pitch.verdict !== 'clean') {
+    console.warn(`[send-email] pitch screen: ${pitch.verdict} (${pitch.reasons.join('; ')})`);
   }
 
   const rows = [
@@ -75,6 +114,7 @@ export default async function handler(req) {
         <h1 style="color:#B08C47;margin:0;font-size:22px">New Quote Request — D4 Plumbing</h1>
       </div>
       <div style="background:#f9f9f9;padding:24px 32px;border-radius:0 0 12px 12px">
+        ${note ? `<p style="background:#fef3c7;border:1px solid #f59e0b;color:#78350f;padding:10px 12px;margin:0 0 16px">${escapeHtml(note)}</p>` : ''}
         <table style="width:100%;border-collapse:collapse">
           <tbody>${rows}</tbody>
         </table>
@@ -88,7 +128,7 @@ export default async function handler(req) {
     from: 'D4 Plumbing <noreply@d4plumbing.com>',
     to: ['jimmy@d4plumbing.com', 'evan@d4plumbing.com'],
     reply_to: email,
-    subject: `New Quote Request — ${name}`,
+    subject: `${pitchSubjectPrefix(pitch)}New Quote Request — ${name}`,
     html,
   };
 

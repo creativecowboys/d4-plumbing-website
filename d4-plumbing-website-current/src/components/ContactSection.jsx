@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -27,6 +27,14 @@ export default function ContactSection() {
     message: '',
   });
 
+  // Spam checks the server reads: a hidden trap field and how long the form
+  // was open (people take more than a few seconds).
+  const honeypotRef = useRef(null);
+  const openedAt = useRef(0);
+  useEffect(() => {
+    openedAt.current = Date.now();
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -41,6 +49,8 @@ export default function ContactSection() {
           service: formData.service,
           referral: formData.referral,
           message: formData.message,
+          website: honeypotRef.current?.value || '',
+          formAge: openedAt.current ? Date.now() - openedAt.current : null,
         }),
       });
       if (res.ok) {
@@ -234,6 +244,13 @@ export default function ContactSection() {
                   <p className="text-center text-[#252525]/50 text-sm">
                     We'll respond within 24 hours. Your information is secure.
                   </p>
+                  {/* Spam trap: hidden from people, bots fill it in. */}
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', top: 'auto', width: 1, height: 1, overflow: 'hidden' }}>
+                    <label>
+                      Website
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" ref={honeypotRef} defaultValue="" />
+                    </label>
+                  </div>
                 </form>
               )}
             </div>
