@@ -29,7 +29,8 @@
 //
 // Keep this file the same in every client repo that uses it (Creative Cowboys
 // pitch filter, Oct 2026). Per-site tuning goes in the caller: the profile,
-// and `skip` with rule ids for a business whose real customers use a phrase.
+// `skip` for a phrase a business's real customers use, `promote` for one no
+// real customer of that business would write.
 //
 // Pure: no imports, no I/O, so it runs in Node, the Edge runtime and tests.
 // Bounded gap inside one sentence: "rank YOUR NEW WEBSITE on the first page".
@@ -110,6 +111,30 @@ const RULES = [
         re: rx("\\b(answers?|answering|handles?|handling|captures?|capturing) (every|all|your|missed) (incoming |inbound )?(calls?|leads?)\\b[^.!?\\n]{0,40}(24/?7|for you|around the clock)"),
     },
     {
+        id: "hand-off-the",
+        kind: "offer",
+        reason: "offers to take over your admin/CRM work",
+        re: rx("\\bhand off (the|your|all (the|your)) (admin|crm|follow[- ]?ups?|bookkeeping|marketing|scheduling|busy ?work|back office)\\b"),
+    },
+    {
+        id: "give-you-va",
+        kind: "offer",
+        reason: "offers you a trained VA / assistant",
+        re: rx("\\b(give|provide|assign|get|match) you (with )?(a|an|your own) (((trained|dedicated|virtual|personal|full[- ]time|part[- ]time|remote) )*(va|virtual assistant|appointment setter)|(trained|dedicated|virtual|remote|offshore) (assistant|developer|team|marketer))\\b"),
+    },
+    {
+        id: "trained-va",
+        kind: "offer",
+        reason: "offers a trained/dedicated VA",
+        re: rx("\\b(trained|dedicated|offshore|filipino|full[- ]time|part[- ]time) (va|vas)\\b"),
+    },
+    {
+        id: "bulk-optout",
+        kind: "service",
+        reason: "bulk-sender opt-out line",
+        re: rx("\\b(reply|text|respond with) ['\"]?(stop|remove|unsubscribe|no)['\"]? (to|if you('d| would) like to) (opt[- ]?out|unsubscribe|stop|be removed)\\b"),
+    },
+    {
         id: "need-more-customers",
         kind: "offer",
         reason: "\"want more customers?\" cold opener",
@@ -181,6 +206,12 @@ const RULES = [
         kind: "service",
         reason: "AI receptionist/chatbot pitch",
         re: rx("\\b(ai (receptionists?|chat ?bots?|voice agents?|phone agents?|answering (service|agents?)|sales agents?|appointment setters?)|ai[- ](powered|driven) (chat ?bots?|receptionists?|agents?|marketing|lead))\\b"),
+    },
+    {
+        id: "our-ai-system",
+        kind: "service",
+        reason: "pitches an AI system/tool",
+        re: rx("\\b((our|my) (own |custom |proprietary |in[- ]house )?ai (systems?|tools?|platforms?|agents?|assistants?|solutions?|software|workflows?)|(the )?power of ai without)"),
     },
     {
         id: "we-offer",
@@ -305,6 +336,7 @@ export function screenPitch(fields, options = {}) {
     const text = normalize(fields);
     const profile = options.profile || "default";
     const skip = new Set(options.skip || []);
+    const promote = new Set(options.promote || []);
     let score = 0;
     let strong = false;
     let standalone = false;
@@ -315,12 +347,13 @@ export function screenPitch(fields, options = {}) {
     for (const rule of RULES) {
         if (skip.has(rule.id) || !rule.re.test(text))
             continue;
-        const weight = rule.kind === "offer" ? 2 : rule.kind === "service" ? (profile === "business" ? 1 : 2) : 1;
+        const kind = promote.has(rule.id) ? "offer" : rule.kind;
+        const weight = kind === "offer" ? 2 : kind === "service" ? (profile === "business" ? 1 : 2) : 1;
         if (weight === 2)
             strong = true;
-        if (rule.kind !== "context")
+        if (kind !== "context")
             standalone = true;
-        if (rule.kind === "offer")
+        if (kind === "offer")
             offer = true;
         score += weight;
         reasons.push(rule.reason);
